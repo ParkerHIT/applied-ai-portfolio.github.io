@@ -297,72 +297,10 @@
             <h2>Technical Architecture</h2>
 
             <div class="architecture-diagram">
-                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.8;">
-                    <div style="margin-bottom: 20px;">
-                        <strong>Data Sources</strong><br>
-                        STRING v12 PPI Network (16,201 proteins)<br>
-                        75 AD Seed Genes (ADSP)<br>
-                        AD GWAS (Kunkle et al. 2019)<br>
-                        GTEx eQTL (Brain Cortex)<br>
-                        DrugBank Drug-Target Data
-                    </div>
-                    
-                    <div style="text-align: center; color: #999; margin: 10px 0;">↓</div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <strong>Network Preprocessing</strong><br>
-                        High-confidence interactions (score > 900)<br>
-                        Filtered network: ~12,000 proteins
-                    </div>
-                    
-                    <div style="text-align: center; color: #999; margin: 10px 0;">↓</div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <strong>Three Parallel Approaches</strong>
-                    </div>
-                    
-                    <div style="padding-left: 20px; margin-bottom: 20px;">
-                        <strong>Approach 1: Proximity-Based</strong><br>
-                        Random Walk with Restart (70% walk, 30% restart)<br>
-                        → 500-protein disease module<br>
-                        → Drug ranking by module target count
-                    </div>
-                    
-                    <div style="padding-left: 20px; margin-bottom: 20px;">
-                        <strong>Approach 2: Causality-Based</strong><br>
-                        Mendelian Randomization (Wald Ratio)<br>
-                        → 43 causal proteins (p < 0.05)<br>
-                        → Drug ranking by causal target count
-                    </div>
-                    
-                    <div style="padding-left: 20px; margin-bottom: 20px;">
-                        <strong>Approach 3: Topology-Based</strong><br>
-                        Louvain community detection (20 communities)<br>
-                        Betweenness centrality<br>
-                        → 50 bottleneck proteins<br>
-                        → Drug ranking by bottleneck target count
-                    </div>
-                    
-                    <div style="text-align: center; color: #999; margin: 10px 0;">↓</div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <strong>Statistical Validation</strong><br>
-                        Label propagation convergence analysis<br>
-                        Random seed null model (1,000 permutations)<br>
-                        GO enrichment (DAVID)<br>
-                        KEGG pathway overlap
-                    </div>
-                    
-                    <div style="text-align: center; color: #999; margin: 10px 0;">↓</div>
-                    
-                    <div>
-                        <strong>Consensus Drug Candidates</strong><br>
-                        Cross-method validation<br>
-                        Top 100 drugs per approach<br>
-                        3 drugs in all three rankings
-                    </div>
-                </div>
-            </div>
+    <img src="images/project6_architecture.png" 
+         alt="Alzheimer's Disease Drug Repurposing Pipeline Architecture" 
+         style="width: 100%; max-width: 1200px; margin: 0 auto; display: block;">
+</div>
         </section>
 
         <section id="implementation">

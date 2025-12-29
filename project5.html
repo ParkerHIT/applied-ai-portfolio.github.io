@@ -244,65 +244,14 @@
 </section>
 
 <section id="architecture">
-    <h2>Technical Architecture</h2>
+    <h2>Pipeline Architecture</h2>
 
     <div class="architecture-diagram">
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.8;">
-            <div style="margin-bottom: 20px;">
-                <strong>Data Source</strong><br>
-                Medicaid Prescription Data (CGRP Market)<br>
-                Quarterly aggregation | 2018-2022<br>
-                Scalable to IQVIA/Symphony datasets
-            </div>
-            
-            <div style="text-align: center; color: #999; margin: 10px 0;">↓</div>
-            
-            <div style="margin-bottom: 20px;">
-                <strong>Statistical Preprocessing</strong><br>
-                Stationarity testing (ADF, KPSS)<br>
-                Trend/seasonality decomposition<br>
-                ACF/PACF analysis<br>
-                Differencing & normalization
-            </div>
-        
-            <div style="text-align: center; color: #999; margin: 10px 0;">↓</div>
-            
-            <div style="margin-bottom: 20px;">
-                <strong>Train/Test Split</strong><br>
-                Train: 2018-2021 (16 quarters)<br>
-                Test: 2022 (4 quarters)<br>
-                Out-of-time validation
-            </div>
-            
-            <div style="text-align: center; color: #999; margin: 10px 0;">↓</div>
-            
-            <div style="margin-bottom: 20px;">
-                <strong>Four Model Classes</strong><br>
-                <strong>1. ARIMA</strong> - Autoregressive baseline | Auto-parameter tuning<br>
-                <strong>2. Holt-Winters</strong> - Exponential smoothing with trend<br>
-                <strong>3. Prophet</strong> - Additive modeling framework<br>
-                <strong>4. LSTM</strong> - Recurrent neural network | Sequence learning
-            </div>
-            
-            <div style="text-align: center; color: #999; margin: 10px 0;">↓</div>
-            
-            <div style="margin-bottom: 20px;">
-                <strong>Validation & Metrics</strong><br>
-                MAE, RMSE, MAPE on test set<br>
-                Model comparison matrix<br>
-                Forecast visualization
-            </div>
-            
-            <div style="text-align: center; color: #999; margin: 10px 0;">↓</div>
-            
-            <div>
-                <strong>Output</strong><br>
-                2023 Forecasts (4 models)<br>
-                Model serialization (.pkl, .json, .h5)<br>
-                Performance comparison report
-            </div>
-        </div>
-    </div>
+    <img src="images/project5_architecture.png" 
+         alt="Time-Series Forecasting Framework for Emerging Drug Markets" 
+         style="width: 100%; max-width: 1200px; margin: 0 auto; display: block;">
+</div>
+
 
     <h3>Technology Stack</h3>
     <ul>
